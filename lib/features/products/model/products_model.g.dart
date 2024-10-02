@@ -8,7 +8,7 @@ part of 'products_model.dart';
 
 ProductsModel _$ProductsModelFromJson(Map<String, dynamic> json) {
     final map = Map<String, dynamic>.from(json['category'] as Map);
-
+print(json['images']);
   return ProductsModel(
       id: (json['id'] as num).toInt(),
       title: json['title'] as String,

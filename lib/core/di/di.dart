@@ -1,4 +1,8 @@
 import 'package:get_it/get_it.dart';
+import 'package:royal/features/auth/repository/auth_repository.dart';
+import 'package:royal/features/auth/repository/auth_repository_impl.dart';
+import 'package:royal/features/auth/services/auth_service.dart';
+import 'package:royal/features/auth/services/auth_service_impl.dart';
 import 'package:royal/features/cart/cart_cubit/cart_cubit.dart';
 import 'package:royal/utils/hive_config/hive_config.dart';
 
@@ -24,7 +28,11 @@ Future<void> init(HiveConfig hiveConfig) async {
       ..registerLazySingleton<ProductsRepository>(() =>
           ProductsRepositoryImpl(di<ProductsApiService>(), di<NetworkInfo>(),di<HiveConfig>()))
       ..registerFactory(() => ProductsBloc(di<ProductsRepository>()))
-      ..registerFactory(() => CartCubit(di<HiveConfig>()));
+      ..registerFactory(() => CartCubit(di<HiveConfig>()))
+      ..registerLazySingleton<AuthService>(
+              () => AuthServiceImpl())
+      ..registerLazySingleton<AuthRepository>(() =>
+          AuthRepositoryImpl(di<AuthService>()));
   } catch (e) {
     print('Error during dependency injection setup: $e');
   }

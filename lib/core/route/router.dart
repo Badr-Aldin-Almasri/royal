@@ -10,7 +10,7 @@ class AppRouter {
         pageBuilder: (context, state) {
           return getTransition(
             state: state,
-           child: const ProductsListingScreen(),
+           child: const AuthScreen(),
           );
         },
       ),
@@ -31,6 +31,16 @@ class AppRouter {
           return getTransition(
             state: state,
             child: CartListingView(),
+          );
+        },
+      ),
+      GoRoute(
+        name: RouteConstants.productListing,
+        path: '/${RouteConstants.productListing}',
+        pageBuilder: (context, state) {
+          return getTransition(
+            state: state,
+            child: ProductsListingScreen(),
           );
         },
       ),

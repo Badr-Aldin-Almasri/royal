@@ -24,6 +24,9 @@ dependencies:
   hive: 2.2.3
   hive_flutter: 1.1.0
   carousel_slider: 5.0.0
+  firebase_core:
+  firebase_auth:
+  google_sign_in:
 
 dev_dependencies:
   bloc_test: ^9.1.7

@@ -1,13 +1,20 @@
 library products;
 
+import 'dart:math';
+
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:clay_containers/widgets/clay_container.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:go_router/go_router.dart';
 import 'package:royal/core/constants/api_routes.dart';
 import 'package:royal/features/cart/cart_cubit/cart_cubit.dart';
 import 'package:royal/features/products/model/products_model.dart';
+import 'package:royal/features/products/presentation/components/product_list.dart';
+import 'package:royal/features/products/presentation/components/product_tab.dart';
+import 'package:royal/features/products/presentation/components/product_top.dart';
 import 'package:royal/features/products/products_bloc/products_bloc.dart';
 import 'package:royal/utils/dio_service/dio_config.dart';
 import 'package:dartz/dartz.dart' show Either,Left,Right;

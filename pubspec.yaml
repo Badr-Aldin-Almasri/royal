@@ -27,6 +27,9 @@ dependencies:
   firebase_core:
   firebase_auth:
   google_sign_in:
+  flutter_staggered_grid_view:
+  glass:
+  clay_containers:
 
 dev_dependencies:
   bloc_test: ^9.1.7
